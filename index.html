@@ -2,13 +2,31 @@
 <html land="en">
 <head>
     <title>Hello World page</title>
+    <style>
+        /* used to alter by tag */
+        span {
+            color:rgb(6, 5, 104);
+        }
+        /* # denotes an attribute */
+        #lname{
+            color: red;
+        }
+        /* . denotes a class */
+        .alwaysblue {
+            color: blue;
+        }
+        .doublesize {
+            font-size: 4em;
+        }
+    </style>
 </head>
-<body>
-    <h1>Whaaaa! Hootie Boo</h1>
-    <span>Mike</span>
-    <span>Page</span>
+<body style="color:rgb(32, 35, 218); font-size: 1.5em">
+    <h1 style="color: rgb(238, 73, 23); font-size: 4em; font-family: 'Times New Roman', Times, serif">Blarggg!</h1>
+    <span class="alwaysblue doublesize">Mike</span>
+    <span id="lname">Page</span>    
     <p>Where ever you go, there you are</p>
-    <!--Comment format for html-->
+    <span>Awesome sauce!</span>
+    <!-- Comment format for html cntrl / will toggle comment format-->
 </body>
 
 </html>
