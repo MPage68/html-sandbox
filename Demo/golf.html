@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>A good walk spoiled</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        function fillArraySumAndAvg() {
+           // var holesCtrl = getRefById("holes");
+           // var sumCtrl = getRefById("sum");
+           // var avgCtrl = getRefById("avg");
+            var scores = [];
+            var sum = 0;
+
+            for(var idx = 0; idx < 18; idx ++){
+            let s = getRandomNumber();
+            scores.push(s);
+            sum += s;
+            }
+            var avg = sum/scores.length;
+            //holesCtrl.textContent = scores.join();
+            //sumCtrl.value = sum;
+            //avgCtrl.value = avg;
+            $("#holes").text(scores);
+            $("#sum").val(sum);
+            $("#avg").val(avg);
+
+            if (sum > 72){
+             var par = sum - 72;
+            }
+            else {
+             var par = sum%72;
+            }
+        }
+
+        function getRandomNumber() {
+            return Math.floor(Math.random() * 8) + 1;
+        }
+
+        function getRefById(id) {
+            return getElementById(id);
+        }   
+
+    
+    </script>
+
+</head>
+<body>
+    <h1>Welcome to the golf simulator</h1>
+    <h2>Holes</h2>
+    <p id = "holes"></p>
+    <p>Sum: <input type = "text" id = "sum"></p>
+    <p>Avg: <input type = "text" id = "avg"></p>
+    <p>Par: <input type = "text" id = "par"></p>
+    <button onclick="fillArraySumAndAvg()">Four!</button>
+
+    
+</body>
+</html>
