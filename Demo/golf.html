@@ -13,7 +13,7 @@
            // var avgCtrl = getRefById("avg");
             var scores = [];
             var sum = 0;
-
+            var par = 72;
             for(var idx = 0; idx < 18; idx ++){
             let s = getRandomNumber();
             scores.push(s);
@@ -27,11 +27,15 @@
             $("#sum").val(sum);
             $("#avg").val(avg);
 
-            if (sum > 72){
-             var par = sum - 72;
+            var ou = (sum - par);
+            if (ou > 0){
+                $("#par").val("You're over par by: " + ou);
+            }
+            else if (ou < 0) {
+                $("#par").val("You're under par by: " + Math.abs(ou));
             }
             else {
-             var par = sum%72;
+              $("#par").val("You shot par: " + par);
             }
         }
 
